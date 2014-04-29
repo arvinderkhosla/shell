@@ -1,0 +1,2 @@
+grep 'Search Criteria Here' * | cut -f3-5 -d' ' | sort  > testFile.txt
+prev=0, sum=0; while read ALINE; do  if [ "$prev" = "$ALINE" ]; then sum=$(expr $sum + 1 ) ; else echo "$prev" "$sum" ; prev=$ALINE ; let sum=0 ; fi;  done < "testFile.txt"; echo $prev $sum;
